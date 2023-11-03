@@ -221,7 +221,7 @@ class UserControllerTestIT {
             .andExpect(jsonPath("$.devices[0].model").value(device.model))
             .andExpect(jsonPath("$.devices[0].phoneNumber").value(device.phoneNumber))
             .andExpect(jsonPath("$.devices[0].serialNumber").value(device.serialNumber))
-            .andDo(print());
+            .andDo(print())
     }
 
     @Test
@@ -288,7 +288,7 @@ class UserControllerTestIT {
             .param("userId", user.id.toString())
             .param("deviceId", device.id.toString()))
             .andExpect(status().isAccepted)
-            .andDo(print());
+            .andDo(print())
 
         // Act
         mockMvc.perform(post("/users/assign")
@@ -298,7 +298,7 @@ class UserControllerTestIT {
             // Assert
             .andExpect(status().isConflict)
             .andExpect(jsonPath("$.title").value("Device already assigned to me"))
-            .andDo(print());
+            .andDo(print())
     }
 
     @Test
@@ -315,7 +315,7 @@ class UserControllerTestIT {
             .param("userId", users[0].id.toString())
             .param("deviceId", device.id.toString()))
             .andExpect(status().isAccepted)
-            .andDo(print());
+            .andDo(print())
 
         // Act
         mockMvc.perform(post("/users/assign")
@@ -325,7 +325,7 @@ class UserControllerTestIT {
             // Assert
             .andExpect(status().isConflict)
             .andExpect(jsonPath("$.title").value("Device already assigned to another User"))
-            .andDo(print());
+            .andDo(print())
     }
 
     @Test
@@ -344,7 +344,7 @@ class UserControllerTestIT {
             // Assert
             .andExpect(status().isNotFound)
             .andExpect(jsonPath("$.title").value("User not found"))
-            .andDo(print());
+            .andDo(print())
     }
 
     @Test
@@ -363,6 +363,6 @@ class UserControllerTestIT {
             // Assert
             .andExpect(status().isNotFound)
             .andExpect(jsonPath("$.title").value("Device not found"))
-            .andDo(print());
+            .andDo(print())
     }
 }

@@ -47,7 +47,7 @@ class UserServiceTestIT {
         val result = userService.create(user)
 
         // Assert
-        Assertions.assertNotNull(result.id);
+        Assertions.assertNotNull(result.id)
         Assertions.assertEquals(result.firstName, user.firstName)
         Assertions.assertEquals(result.lastName, user.lastName)
         Assertions.assertEquals(result.birthday, user.birthday)
@@ -100,7 +100,7 @@ class UserServiceTestIT {
 
         // Assert
         // User
-        Assertions.assertNotNull(result.id);
+        Assertions.assertNotNull(result.id)
         Assertions.assertEquals(result.firstName, user.firstName)
         Assertions.assertEquals(result.lastName, user.lastName)
         Assertions.assertEquals(result.birthday, user.birthday)
@@ -158,7 +158,7 @@ class UserServiceTestIT {
 
         // Act
         val exception = Assertions.assertThrows(DeviceAlreadyAssignedToMeException::class.java) {
-            val result = userService.assignDevice(user.id!!, device.id!!)
+            userService.assignDevice(user.id!!, device.id!!)
         }
 
         // Assert
@@ -183,7 +183,7 @@ class UserServiceTestIT {
 
         // Act
         val exception = Assertions.assertThrows(DeviceAlreadyAssignedToAnotherUserException::class.java) {
-            val result = userService.assignDevice(user.id!!, device.id!!)
+            userService.assignDevice(user.id!!, device.id!!)
         }
 
         // Assert
@@ -201,7 +201,7 @@ class UserServiceTestIT {
 
         // Act
         val exception = Assertions.assertThrows(EntityNotFoundException::class.java) {
-            val result = userService.assignDevice(userId, device.id!!)
+            userService.assignDevice(userId, device.id!!)
         }
 
         // Assert
@@ -219,7 +219,7 @@ class UserServiceTestIT {
 
         // Act
         val exception = Assertions.assertThrows(EntityNotFoundException::class.java) {
-            val result = userService.assignDevice(user.id!!, deviceId)
+            userService.assignDevice(user.id!!, deviceId)
         }
 
         // Assert

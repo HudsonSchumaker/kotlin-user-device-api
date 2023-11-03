@@ -32,7 +32,7 @@ class DeviceServiceTestIT {
         val result = deviceService.create(device)
 
         // Assert
-        Assertions.assertNotNull(result.id);
+        Assertions.assertNotNull(result.id)
         Assertions.assertEquals(result.uuid, device.uuid)
         Assertions.assertEquals(result.serialNumber, device.serialNumber)
         Assertions.assertEquals(result.phoneNumber, device.phoneNumber)

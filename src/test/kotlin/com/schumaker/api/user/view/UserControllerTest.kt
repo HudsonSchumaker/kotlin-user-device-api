@@ -145,7 +145,7 @@ class UserControllerTest {
             .andExpect(jsonPath("$.devices[0].serialNumber").value(assignedUser.devices[0].serialNumber))
             .andExpect(jsonPath("$.devices[0].model").value(assignedUser.devices[0].model))
             .andExpect(jsonPath("$.devices[0].phoneNumber").value(assignedUser.devices[0].phoneNumber))
-            .andDo(print());
+            .andDo(print())
     }
 
     @Test
@@ -270,6 +270,6 @@ class UserControllerTest {
             .andDo(print())
 
             // Verify that userService.list() was called
-            verify(userService).list(pageable);
+            verify(userService).list(pageable)
     }
 }
