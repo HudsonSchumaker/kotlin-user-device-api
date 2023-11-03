@@ -151,19 +151,23 @@ class UserControllerTestIT {
 
     @Test
     fun `should not create user since city is blank`() {
+        // Arrange
         val userForm = UserForm(
             firstName = "John", lastName = "Textor", address = UserTestHelper.createAddressFormBlankCity(),
             birthday = LocalDate.of(1980,6,11)
         )
 
+        // Act
         mockMvc.perform(
             post("/users")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content(objectMapper.writeValueAsString(userForm))
-        ).andExpect(status().isBadRequest)
-            .andExpect(jsonPath("$.[0].field").value("address.city"))
-            .andExpect(jsonPath("$.[0].error").value("City can not be null or blank"))
-            .andDo(print())
+                .content(objectMapper.writeValueAsString(userForm)))
+
+                // Assert
+                .andExpect(status().isBadRequest)
+                .andExpect(jsonPath("$.[0].field").value("address.city"))
+                .andExpect(jsonPath("$.[0].error").value("City can not be null or blank"))
+                .andDo(print())
     }
 
     @Test
@@ -241,15 +245,15 @@ class UserControllerTestIT {
             post("/users/assign")
                 .param("userId", user.id.toString())
                 .param("deviceId", device1.id.toString()))
-            .andExpect(status().isAccepted)
-            .andDo(print())
+                .andExpect(status().isAccepted)
+                .andDo(print())
 
         mockMvc.perform(
             post("/users/assign")
                 .param("userId", user.id.toString())
                 .param("deviceId", device2.id.toString()))
-            .andExpect(status().isAccepted)
-            .andDo(print())
+                .andExpect(status().isAccepted)
+                .andDo(print())
 
         val result = mockMvc.perform(get("/users"))
             .andExpect(status().isOk())

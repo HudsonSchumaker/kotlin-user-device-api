@@ -19,7 +19,7 @@ class UserRepositoryTest {
 
     @Test
     fun `should find user by firstName, lastName and birthday`() {
-
+        // Arrange
         val user = UserTestHelper.createUserWithoutId()
         entityManager.persist(user.address)
         entityManager.flush()
@@ -27,15 +27,17 @@ class UserRepositoryTest {
         entityManager.persist(user)
         entityManager.flush()
 
+        // Act
         val result = userRepository.findByFirstNameAndLastNameAndBirthday(user.firstName, user.lastName, user.birthday)
 
+        // Assert
         assertTrue(result.isPresent)
         assertEquals(user, result.get())
     }
 
     @Test
     fun `should not find user by firstName, lastName and birthday`() {
-
+        // Arrange
         val user = UserTestHelper.createUserWithoutId()
         entityManager.persist(user.address)
         entityManager.flush()
@@ -43,8 +45,10 @@ class UserRepositoryTest {
         entityManager.persist(user)
         entityManager.flush()
 
+        // Act
         val result = userRepository.findByFirstNameAndLastNameAndBirthday(user.firstName, user.lastName, LocalDate.now())
 
+        // Assert
         assertFalse(result.isPresent)
     }
 }

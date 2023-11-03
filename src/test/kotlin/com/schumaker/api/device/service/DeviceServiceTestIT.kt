@@ -42,11 +42,11 @@ class DeviceServiceTestIT {
     fun `should not create device, device already exists`() {
         // Arrange
         val device = DeviceTestHelper.createDeviceWithoutId()
-        val saved = deviceService.create(device)
+        deviceService.create(device)
 
         // Act
         val exception = Assertions.assertThrows(DeviceAlreadyExistsException::class.java) {
-            val result = deviceService.create(device)
+            deviceService.create(device)
         }
 
         // Assert

@@ -125,6 +125,7 @@ class UserServiceTest {
         device1.user = user
         device2.user = user
 
+        // Mock behaviors
         `when`(userRepository.findById(user.id!!)).thenReturn(Optional.of(user))
         `when`(deviceService.getById(device1.id!!)).thenReturn(device1)
         `when`(deviceService.getById(device2.id!!)).thenReturn(device2)
