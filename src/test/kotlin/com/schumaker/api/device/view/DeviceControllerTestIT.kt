@@ -23,9 +23,6 @@ import java.text.SimpleDateFormat
 class DeviceControllerTestIT {
 
     @Autowired
-    private lateinit var deviceService: DeviceService
-
-    @Autowired
     private lateinit var deviceRepository: DeviceRepository
 
     @Autowired
