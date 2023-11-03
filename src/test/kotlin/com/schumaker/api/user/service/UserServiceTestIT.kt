@@ -57,11 +57,11 @@ class UserServiceTestIT {
     fun `should not create user since is already created`() {
         // Arrange
         val user = UserTestHelper.createUserWithoutId()
-        val saved = userService.create(user)
+        userService.create(user)
 
         // Act
         val exception = Assertions.assertThrows(UserAlreadyExistsException::class.java) {
-            val result = userService.create(user)
+            userService.create(user)
         }
 
         // Assert

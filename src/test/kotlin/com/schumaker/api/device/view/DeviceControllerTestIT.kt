@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.schumaker.api.DeviceTestHelper
 import com.schumaker.api.device.model.DeviceRepository
-import com.schumaker.api.device.service.DeviceService
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
