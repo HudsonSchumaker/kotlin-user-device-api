@@ -2,7 +2,7 @@
 This is the user-deice API responsible for users and devices management.
 
 ### Summary
-This API has endpoints to create a User, assign a Device to User, list Users with pagination and sorting and create a Device.
+This API has endpoints to create a User, assign a Device to User, list Users with pagination & sorting and create a Device.
 <br>
 It uses H2 as a database, Flyway for migrations and Swagger-UI to make testing easier.
 
