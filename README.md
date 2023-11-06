@@ -1,5 +1,5 @@
 # user-device-api
-This is the user-deice API responsible for users and devices management.
+This is the user-device API responsible for users and devices management.
 
 ### Summary
 This API has endpoints to create a User, assign a Device to User, list Users with pagination & sorting and create a Device.
