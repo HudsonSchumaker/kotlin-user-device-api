@@ -9,7 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
 import java.time.LocalDate
 
 @DataJpaTest
-class UserRepositoryTest {
+class UserRepositoryTestIT {
 
     @Autowired
     private lateinit var entityManager: TestEntityManager

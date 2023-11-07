@@ -9,7 +9,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager
 
 @DataJpaTest
-class DeviceRepositoryTest {
+class DeviceRepositoryTestIT {
 
     @Autowired
     private lateinit var entityManager: TestEntityManager
