@@ -9,7 +9,4 @@ data class UserDTO(val id: Long,
                    val address: AddressDTO,
                    val birthday: LocalDate,
                    val devices: List<DeviceDTO> = ArrayList(),
-) {
-    // Add a no-argument constructor for ModelMapper
-    constructor() : this(0, "", "", AddressDTO(), LocalDate.now(), emptyList())
-}
+)
