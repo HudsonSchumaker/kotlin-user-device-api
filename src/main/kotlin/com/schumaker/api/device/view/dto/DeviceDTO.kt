@@ -5,7 +5,4 @@ data class DeviceDTO(val id: Long,
                      val uuid: String,
                      val phoneNumber: String,
                      val model: String,
-){
-    // Add a no-argument constructor for ModelMapper
-    constructor() : this(0, "", "", "", "")
-}
+)
